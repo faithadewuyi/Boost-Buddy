@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js" //step 3 gotten standard import for real-time data
+import { getDatabase, ref, push, onValue  } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js" //step 3 gotten standard import for real-time data
 
 const appSettings ={
   databaseURL: "https://endorse-b4353-default-rtdb.europe-west1.firebasedatabase.app/"
@@ -18,6 +18,28 @@ publishEl.addEventListener("click", function(){
   let messageValue= messageEl.value
 
   push(endorsementListINDB, messageValue)
-  endorsementListEl.innerHTML += `<p>${messageValue}</p>`
+  clearTextAreaEl()
+  
+  
 
 })
+onValue(endorsementListINDB, function(snapshot){
+  let itemArray = Object.values(snapshot.val())
+  clearEndosementListEl()
+  
+  for (let i = 0; i < itemArray.length; i++){
+  appendMessageToList(itemArray[i])
+    
+  }
+})
+
+function clearEndosementListEl(){
+  endorsementListEl.innerHTML = ""
+}
+
+function clearTextAreaEl () {
+  messageEl.value =""
+}
+function appendMessageToList (itemValue){
+  endorsementListEl.innerHTML += `<p>${itemValue}</p>`
+}
