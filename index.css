@@ -28,7 +28,7 @@ h1{
     text-align: center;
 
 }
-p{
+.description{
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
@@ -81,16 +81,32 @@ button{
     margin: 7px ;
     padding: 20px;
     border: none;
-   cursor: pointer;
+    cursor: pointer;
 
 }
 h3{
-font-family: Josefin Sans;
-font-size: 20px;
-font-weight: 700;
-line-height: 20px;
-letter-spacing: 0em;
-text-align: left;
-color: #FFFFFF;
+    font-family: Josefin Sans;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+
+}
+
+ #endorsement-list p{
+    font-family: Inter;
+    font-size: 20px;
+    width: 317px;
+    padding:20px; 
+    font-weight: 400;
+    line-height: 15px;
+    letter-spacing: 0em;
+    background-color: antiquewhite;
+    color:#1F2937;
+    border-radius: 8px;
+    align-items: center;
+
 
 }
