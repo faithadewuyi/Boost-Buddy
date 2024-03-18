@@ -1,8 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background-color: #1F2937;
-    color: white;
+    
 }
 .container{
     display:flex;
@@ -10,22 +9,21 @@ html, body {
     margin: 30px auto;
     max-width: 450px; 
     align-items: center;
-   
+    background-color: #1F2937;
+    color: white;
+
 }
 img{
     width: 90px;
     height: 90px;
-     margin: 0 auto;
     
-   
-
+    margin-top: 25px;
 }
 h1{
     font-family: Josefin Sans;
     font-size: 35px;
     font-weight: 700;
-    line-height: 25px;
-    text-align: center;
+     text-align: center;
 
 }
 .description{
@@ -55,23 +53,7 @@ textarea::-webkit-input-placeholder {
     font-size: 16px;
 }
 
-textarea:-moz-placeholder { 
-    color: #1F2937;
-    font-style: italic;
-    font-size: 16px;
-}
 
-textarea::-moz-placeholder { 
-    color: #909090;
-    font-style: italic;
-    font-size: 16px;
-}
-
-textarea:-ms-input-placeholder { 
-    color: #909090;
-    font-style: italic;
-    font-size: 16px;
-}
 
 button{
     width: 317px;
@@ -88,8 +70,6 @@ h3{
     font-family: Josefin Sans;
     font-size: 20px;
     font-weight: 700;
-    line-height: 20px;
-    letter-spacing: 0em;
     text-align: left;
     color: #FFFFFF;
 
@@ -107,6 +87,5 @@ h3{
     color:#1F2937;
     border-radius: 8px;
     align-items: center;
-
 
 }

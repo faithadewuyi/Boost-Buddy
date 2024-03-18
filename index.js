@@ -24,11 +24,14 @@ publishEl.addEventListener("click", function(){
 
 })
 onValue(endorsementListINDB, function(snapshot){
-  let itemArray = Object.values(snapshot.val())
+  let itemArray = Object.entries(snapshot.val())
   clearEndosementListEl()
   
   for (let i = 0; i < itemArray.length; i++){
-  appendMessageToList(itemArray[i])
+    let currentItem = itemArray[i]
+    let currentItemID = currentItem[0]
+    let currentItemValue = currentItem[1]
+    appendMessageToList(currentItemValue)
     
   }
 })
@@ -41,5 +44,17 @@ function clearTextAreaEl () {
   messageEl.value =""
 }
 function appendMessageToList (itemValue){
-  endorsementListEl.innerHTML += `<p>${itemValue}</p>`
+
+  let newEl = document.createElement("p")
+
+  newEl.textContent = itemValue;
+
+  newEl.addEventListener("click", function() {
+    let exactLocationOfItemInDB = ref(database, `Endorsements/${itemID}`)
+    
+    remove(exactLocationOfItemInDB)
+})
+
+  endorsementListEl.append(newEl)
+ 
 }
